@@ -11,7 +11,7 @@ pnpm run build
 pnpm dev
 ```
 
-Use Python 3.12+ or Node 22+ with pnpm, as applicable. Create and activate a virtual environment for Python dependencies.
+Requires Node 22+ and pnpm.
 
 ## Features
 
@@ -23,10 +23,10 @@ Browser-only persistence; no backend connection, accounts, multi-user sync or re
 
 ## Tests
 
-Tests live alongside the source and cover business rules and error cases. See the portfolio delivery report for the actual validation results.
+Six model tests cover filtered totals, combined filters, empty results, CSV escaping, stored-data validation and payment status. Run the test command above to verify your environment.
 
-## Explain this project
+## Design notes
 
-Trace one input through validation, state change, and output. Explain the data representation and one failure path. Modify a validation rule and update its test before discussing the project in an interview.
+Invoice amounts are stored as integer cents. Search, status and month filters feed the same rows into the table, chart and summary totals. CSV exports quote every cell and prefix formula-like text. Browser storage is validated before use.
 
-MIT licensed. No employment, client work or production outcomes are claimed.
+MIT licensed. See LICENSE.
